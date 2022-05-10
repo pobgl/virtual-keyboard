@@ -1,0 +1,31 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "virtual-keyboard task",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "lint": "npx eslint --fix ./virtual-keyboard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pobgl/virtual-keyboard.git"
+  },
+  "keywords": [
+    "Virtual keyboard",
+    "Rolling Scopes School",
+    "App"
+  ],
+  "author": "Gleb Pobezhimov <pglb@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pobgl/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/pobgl/virtual-keyboard#readme",
+  "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0"
+  }
+}
