@@ -1,2 +1,2 @@
-# pobgl-JSFE2022Q1
-Private repository for @pobgl
+Virtual Keyboard task
+https://pobgl.github.io/virtual-keyboard/virtual-keyboard/
