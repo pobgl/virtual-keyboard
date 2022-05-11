@@ -19,17 +19,22 @@ const Keyboard = {
 
   init() {
     // Create main elements
+    this.elements.textArea = document.createElement('textarea');
     this.elements.main = document.createElement('div');
     this.elements.keysContainer = document.createElement('div');
 
-    // Setup main elements
+    // Setup main elements    
+    this.elements.textArea.classList.add('use-keyboard-input');
     this.elements.main.classList.add('keyboard', 'keyboard--hidden');
     this.elements.keysContainer.classList.add('keyboard__keys');
     this.elements.keysContainer.appendChild(this._createKeys());
 
     this.elements.keys = this.elements.keysContainer.querySelectorAll('.keyboard__key');
 
+    this.elements.textArea.placeholder = 'Click here';
+
     // Add to DOM
+    document.body.appendChild(this.elements.textArea);
     this.elements.main.appendChild(this.elements.keysContainer);
     document.body.appendChild(this.elements.main);
 
