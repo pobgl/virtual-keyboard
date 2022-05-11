@@ -304,7 +304,7 @@ const Keyboard = {
 
     keyLayout.forEach((key) => {
       const keyElement = document.createElement('button');
-      insertLineBreak = ['backspace', 'en', 'ru', 'enter', '/'];         
+      const insertLineBreak = ['backspace', 'en', 'ru', 'enter', '/'];         
 
       // Add attributes/classes
       keyElement.setAttribute('type', 'button');
@@ -368,8 +368,7 @@ const Keyboard = {
           keyElement.classList.add('keyboard__key--wide');
           keyElement.innerHTML = createIconHTML('backspace');
 
-          keyElement.addEventListener('click', () => {
-            let area = document.querySelector('.use-keyboard-input');            
+          keyElement.addEventListener('click', () => {                        
             this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
             this._triggerEvent('oninput');
           });
