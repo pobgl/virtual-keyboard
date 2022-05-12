@@ -14,10 +14,14 @@ const Keyboard = {
     value: '',
     capsLock: false,
     shift: false,
-    language: 'en',    
+    language: localStorage.getItem('lang'),    
   },
 
   init() {
+    if (localStorage.getItem('lang')) {
+      Keyboard.properties.language = localStorage.getItem('lang');
+    }
+
     // Create main elements
     this.elements.textArea = document.createElement('textarea');
     this.elements.main = document.createElement('div');
@@ -686,8 +690,10 @@ const Keyboard = {
   _toggleEnRu() {
     if (this.properties.language === 'en') {
       this.properties.language = 'ru';
+      localStorage.setItem('lang', 'ru');
     } else {
       this.properties.language = 'en';
+      localStorage.setItem('lang', 'en');
     }
     for (const key of this.elements.keys) {
     if(key.childElementCount === 0) {
