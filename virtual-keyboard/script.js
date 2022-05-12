@@ -14,7 +14,7 @@ const Keyboard = {
     value: '',
     capsLock: false,
     shift: false,
-    language: localStorage.getItem('lang'),    
+    language: ('en' || localStorage.getItem('lang')),    
   },
 
   init() {
@@ -179,7 +179,7 @@ const Keyboard = {
       },
       {
         en: 'en',
-        ru: 'ru'
+        ru: 'ru',
       },      
       {
         en: 'caps',
@@ -262,11 +262,11 @@ const Keyboard = {
         ru: 'б',
       },
       {
-        en: ['.', '>'],
+        en: ['/', '>'],
         ru: 'ю',
       },
       {
-        en: ['/', '?'],
+        en: ['.', '?'],
         ru: ['.', ','],
       },      
       {
@@ -308,7 +308,7 @@ const Keyboard = {
 
     keyLayout.forEach((key) => {
       const keyElement = document.createElement('button');
-      const insertLineBreak = ['backspace', 'en', 'ru', 'enter', '/'];         
+      const insertLineBreak = ['backspace', 'en', 'ru', 'enter', '.'];         
 
       // Add attributes/classes
       keyElement.setAttribute('type', 'button');
@@ -728,7 +728,10 @@ const Keyboard = {
             break;
           case 'p':
             key.textContent = 'з'
-            break;          
+            break; 
+          case 'en':
+            key.textContent = 'ru'
+            break;         
           case 'a':
             key.textContent = 'ф'
             break;
@@ -780,10 +783,10 @@ const Keyboard = {
           case ',':
             key.textContent = 'б'
             break;
-          case '.':
+          case '/':
             key.textContent = 'ю'
             break;
-          case '/':
+          case '.':
             key.textContent = '.'
             break;
           case ';':
@@ -797,10 +800,7 @@ const Keyboard = {
             break;
           case ']':
             key.textContent = 'ъ'
-            break;
-          case 'en':
-            key.textContent = 'ru'
-            break;
+            break;          
           }
         } else {
           switch (key.textContent) {
@@ -833,7 +833,10 @@ const Keyboard = {
             break;
           case 'з':
             key.textContent = 'p'
-            break;          
+            break; 
+          case 'ru':
+            key.textContent = 'en'
+            break;         
           case 'ф':
             key.textContent = 'a'
             break;
@@ -886,10 +889,10 @@ const Keyboard = {
             key.textContent = ','
             break;
           case 'ю':
-            key.textContent = '.'
+            key.textContent = '/'
             break;
           case '.':
-            key.textContent = '/'
+            key.textContent = '.'
             break;
           case 'ж':
             key.textContent = ';'
@@ -902,10 +905,7 @@ const Keyboard = {
             break;
           case 'ъ':
             key.textContent = ']'
-            break;
-          case 'ru':
-            key.textContent = 'en'
-            break;
+            break;          
          }
         }
       }
